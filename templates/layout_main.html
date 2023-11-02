@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"/>
+    <title>WiPi</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/style_main.css') }}"/>
+  </head>
+  <body>
+    <p id="title">WiPi</p>
+
+    <div class="main">
+      {% for section in Sections %}
+      <div class="section">
+        <a href="/{{ section.name }}" style="text-decoration: none;">
+          <div>
+            <p id="number">{{ section.item_list|length }}</p>
+            <p id="type">{{ section.name }}</p>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="close">
+      <a class="button" href="{{ url_for('close_app') }}">shutdown</a>
+    </div>
+  </body>
+</html>

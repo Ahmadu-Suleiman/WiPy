@@ -1,0 +1,54 @@
+#menu {
+  height: 100%;
+  width: 70px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: darkred;
+}
+
+.menu_item {
+  height: 30px;
+  width: 30px;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: 0.3s;
+  opacity: 0.9;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#menu_item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+#container {
+  display: flex;
+  flex-grow: 1;
+  flex-flow: row wrap;
+  overflow: scroll;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  margin-top: 5px;
+  margin-left: 70px;
+}
+
+.item {
+  margin: 5px;
+  overflow: scroll;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  color: darkred;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px;
+}

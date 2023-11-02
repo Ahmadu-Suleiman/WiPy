@@ -1,0 +1,38 @@
+#menu {
+  height: 100%;
+  width: 70px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: darkred;
+}
+
+#menu_item {
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: 0.3s;
+  opacity: 0.9;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#menu_item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+#main_content{
+    margin-left: 100px;
+}
+
+p{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+    color: darkred;
+    white-space: normal;
+    word-break: break-word;
+    padding: 4px;
+}

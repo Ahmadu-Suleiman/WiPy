@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WiPi</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/style_open.css') }}"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <div id="menu">
+        {% for section in sections %}
+        <a href="/{{ section }}">
+          <img class="menu_item" src="{{ '/static/images/'+section+'.png' }}" />
+        </a>
+        {% endfor %}
+      </div>
+      <div id="container">
+        {% for item in items %} {% if mime_from_file(item).find('image') != -1
+        %}
+        <img
+          class="item"
+          src="{{ url_for('get_item', item_name=get_name(item)) }}"
+        />
+
+        {% elif mime_from_file(item).find('video') != -1 %}
+        <video class="item" controls>
+          <source
+            src="{{ url_for('get_item', item_name=get_name(item)) }}"
+            type="video/mp4"
+          />
+          <source
+            src="{{ url_for('get_item', item_name=get_name(item)) }}"
+            type="video/ogg"
+          />
+        </video>
+
+        {% elif mime_from_file(item).find('audio') != -1 %}
+        <audio class="item" controls>
+          <source
+            src="{{ url_for('get_item', item_name=get_name(item)) }}"
+            type="audio/ogg"
+          />
+          <source
+            src="{{ url_for('get_item', item_name=get_name(item)) }}"
+            type="audio/mpeg"
+          />
+        </audio>
+
+        {% elif mime_from_file(item).find('text') != -1 %}
+        <pre class="item">{{ get_text(item) }}</pre>
+
+        {% elif mime_from_file(item).find('pdf') != -1 %}
+        <pre class="item">{{ get_text_pdf(item) }}</pre>
+
+        {% else %}
+        <p class="item">Can Not Open</p>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
