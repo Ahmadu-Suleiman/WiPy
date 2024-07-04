@@ -1,0 +1,4 @@
+Flask==3.0.3
+pdfminer==20191125
+python_magic==0.4.27
+waitress==3.0.0

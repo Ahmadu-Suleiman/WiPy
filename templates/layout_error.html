@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>WiPy</title>
+    <link
+            href="{{ url_for('static',filename='styles/style_error.css') }}"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<div id="menu">
+    {% for section in sections %}
+    <a href="/{{ section }}">
+        <img id="menu_item" src="{{ '/static/images/'+section+'.png' }}"/>
+    </a>
+    {% endfor %}
+</div>
+<div id="main_content">
+    <p>{{ message }}</p>
+</div>
+</body>
+</html>

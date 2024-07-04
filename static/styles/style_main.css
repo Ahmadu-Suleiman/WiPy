@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    max-width: 100%;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: row wrap;
+    place-items: center;
+    padding: 4px;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+#title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: darkred;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px;
+}
+
+.section{
+    height: 150px;
+    width: 40%;
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.section:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#number {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    color: darkred;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 4px;
+}
+
+#type {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: crimson;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 4px;
+}
+
+.close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.button{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: darkred;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 20px;
+    color: white;
+}
+
+.button:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}

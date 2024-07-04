@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>WiPy</title>
+    <link
+            href="{{ url_for('static',filename='styles/style_item.css') }}"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<form action="/select" method="post">
+    <div id="main">
+        <div id="menu">
+            {% for section in sections %}
+            <a href="/{{ section }}">
+                <img
+                        class="menu_item"
+                        src="{{ '/static/images/'+section+'.png' }}"
+                />
+            </a>
+            {% endfor %}
+        </div>
+        <div class="container">
+            {% if section_name=='Images' %} {% for item in item_list %}
+            <div>
+                <input
+                        id="{{ item }}"
+                        name="item"
+                        type="checkbox"
+                        value="{{ item }}"
+                />
+                <label for="{{ item }}">
+                    <img src="{{ url_for('get_item', item_name=get_name(item)) }}"/>
+                </label>
+            </div>
+            {% endfor %} {% else %} {% for item in item_list %}
+            <div>
+                <input
+                        id="{{ item }}"
+                        name="item"
+                        type="checkbox"
+                        value="{{ item }}"
+                />
+                <label for="{{ item }}">
+                    <img
+                            id="icon"
+                            src="{{ '/static/images/'+section_name+'.png' }}"
+                    />
+                </label>
+                <p>{{ get_name(item) }}</p>
+            </div>
+            {% endfor %} {% endif %}
+
+            <div>
+                <input
+                        alt="select"
+                        class="select"
+                        src="/static/images/select.png"
+                        type="image"
+                />
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

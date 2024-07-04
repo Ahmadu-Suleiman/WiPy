@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  app:
+    build: ./
+    container_name: wipy_container
+    ports:
+      - "8080:8080" 
